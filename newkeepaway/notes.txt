@@ -1,0 +1,6 @@
+start
+in directory media/DATA/Research/newkeepaway/keepaway ./keepaway.sh
+rcssmonitor --server-port 5800
+
+stop
+in directory /media/DATA/Research/newkeepaway/keepaway/tools$ ./killserver
