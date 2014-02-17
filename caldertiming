@@ -1,0 +1,10 @@
+#include <time.h>
+
+struct timespec st, et;
+clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &st); //can use CLOCK_MONOTONIC for real-world time
+// DO WORK
+clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &et); //can use CLOCK_MONOTONIC for real-world time
+float secs = (float)(et.tv_sec - st.tv_sec);
+secs = secs + (float)(et.tv_nsec - st.tv_nsec) / 1000000000.0;
+
+// compile with -lrt

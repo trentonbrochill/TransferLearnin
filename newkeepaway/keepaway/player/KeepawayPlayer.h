@@ -39,41 +39,42 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     sophisticated decision procedure to determine the next action. */
 class KeepawayPlayer:public BasicPlayer
 {
- protected:
-  bool          bContLoop;               /*!< is server is alive             */
+protected:
+    bool          bContLoop;               /*!< is server is alive             */
 
-  Time          m_timeLastSay;           /*!< last time communicated         */
-  Time          m_timeStartEpisode;
-  SMDPAgent     *SA;
+    Time          m_timeLastSay;           /*!< last time communicated         */
+    Time          m_timeStartEpisode;
+    SMDPAgent     *SA;
+    int fifo_server,fifo_client;
 
-  // methods associated with saying (defined in KeepawayPlayer.cc)
-  bool          shallISaySomething        (                                  );
-  void          makeSayMessage            ( SoccerCommand  soc,
-					    char *         str               );
+    // methods associated with saying (defined in KeepawayPlayer.cc)
+    bool          shallISaySomething        (                                  );
+    void          makeSayMessage            ( SoccerCommand  soc,
+                                              char *         str               );
 
- public:
-  KeepawayPlayer                          ( SMDPAgent      *sa,
-					    ActHandler     *a,
-                                            WorldModel     *wm,
-                                            ServerSettings *ss,
-                                            PlayerSettings *cs,
-                                            char           *strTeamName,
-					    int            iNumKeepers,
-					    int            iNumTakers,
-                                            double         dVersion,
-                                            int            iReconnect = -1   );
+public:
+    KeepawayPlayer                          ( SMDPAgent      *sa,
+                                              ActHandler     *a,
+                                              WorldModel     *wm,
+                                              ServerSettings *ss,
+                                              PlayerSettings *cs,
+                                              char           *strTeamName,
+                                              int            iNumKeepers,
+                                              int            iNumTakers,
+                                              double         dVersion,
+                                              int            iReconnect = -1   );
 
-  void          mainLoop                  (                                  );
+    void          mainLoop                  (                                  );
 
-  // behaviors
-  SoccerCommand keeper();
-  SoccerCommand keeperWithBall();
-  SoccerCommand keeperSupport( ObjectT fastest );
-  SoccerCommand interpretKeeperAction( int action );
+    // behaviors
+    SoccerCommand keeper();
+    SoccerCommand keeperWithBall();
+    SoccerCommand keeperSupport( ObjectT fastest );
+    SoccerCommand interpretKeeperAction( int action );
 
-  ObjectT chooseLookObject( double ballThr );
+    ObjectT chooseLookObject( double ballThr );
 
-  SoccerCommand taker();
+    SoccerCommand taker();
 
 };
 
