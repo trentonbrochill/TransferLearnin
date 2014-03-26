@@ -1,5 +1,0 @@
-xmlreader.o: xmlreader.cpp xmlreader.h ../config.h
-
-xmlreader.h:
-
-../config.h:
