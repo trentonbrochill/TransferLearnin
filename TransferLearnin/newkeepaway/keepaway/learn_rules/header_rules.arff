@@ -1,0 +1,17 @@
+@relation from3v2
+@attribute state[0] numeric
+@attribute state[1] numeric
+@attribute state[2] numeric
+@attribute state[3] numeric
+@attribute state[4] numeric
+@attribute state[5] numeric
+@attribute state[6] numeric
+@attribute state[7] numeric
+@attribute state[8] numeric
+@attribute state[9] numeric
+@attribute state[10] numeric
+@attribute state[11] numeric
+@attribute state[12] numeric
+@attribute Action {0,1,2}
+
+@data
