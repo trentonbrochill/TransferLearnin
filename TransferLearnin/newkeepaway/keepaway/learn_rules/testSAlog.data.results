@@ -1,0 +1,60 @@
+
+Options: -O 10 
+
+JRIP rules:
+===========
+
+(state[5] <= 2.86392) and (state[10] >= 11.6648) and (state[3] >= 3.3) => Action=2 (9.0/1.0)
+(state[4] >= 5.17135) and (state[4] >= 12.3406) and (state[6] <= 10.4371) => Action=1 (62.0/29.0)
+ => Action=0 (1583.0/413.0)
+
+Number of Rules : 3
+
+
+Time taken to build model: 0.49 seconds
+Time taken to test model on training data: 0.02 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances        1211               73.2164 %
+Incorrectly Classified Instances       443               26.7836 %
+Kappa statistic                          0.1015
+Mean absolute error                      0.2761
+Root mean squared error                  0.3715
+Relative absolute error                 96.8221 %
+Root relative squared error             98.448  %
+Coverage of cases (0.95 level)          99.9395 %
+Mean rel. region size (0.95 level)      98.5691 %
+Total Number of Instances             1654     
+
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1170   28    1 |    a = 0
+  308   33    0 |    b = 1
+  105    1    8 |    c = 2
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances        1189               71.8863 %
+Incorrectly Classified Instances       465               28.1137 %
+Kappa statistic                          0.0328
+Mean absolute error                      0.2801
+Root mean squared error                  0.379 
+Relative absolute error                 98.2392 %
+Root relative squared error            100.438  %
+Coverage of cases (0.95 level)          99.8186 %
+Mean rel. region size (0.95 level)      99.4962 %
+Total Number of Instances             1654     
+
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1174   19    6 |    a = 0
+  326   13    2 |    b = 1
+  107    5    2 |    c = 2
+
